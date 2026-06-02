@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgroMarché – Publier une annonce</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+  
+  <!-- PUBLICATION -->
+  <section class="inscription-section publication-section">
+    <div class="inscription-container">
+      <div class="inscription-header">
+        <h2>Publier une annonce</h2>
+        <p>Racontez votre offre, ajoutez une photo et partagez votre localisation pour toucher les acheteurs locaux.</p>
+      </div>
+
+      <form class="inscription-form" id="publicationForm" action="#" method="post" enctype="multipart/form-data">
+        <input type="hidden" id="annonceId" name="id" value="" />
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="titre">Titre de l'annonce</label>
+            <input type="text" id="titre" name="titre" required placeholder="Ex: Vente de maïs local" />
+          </div>
+          <div class="form-group">
+            <label for="statut">Statut</label>
+            <select id="statut" name="statut" required>
+              <option value="Publié">Publié</option>
+              <option value="En attente">En attente</option>
+              <option value="Archivé">Archivé</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="date_creation">Date de publication</label>
+            <input type="date" id="date_creation" name="date_creation" required />
+          </div>
+          <div class="form-group">
+            <label for="photo">Photo de l'annonce</label>
+            <input type="url" id="photo" name="photo" placeholder="URL de l'image (facultatif)" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group" style="grid-column: 1 / -1;">
+            <label for="description">Description</label>
+            <textarea id="description" name="description" rows="6" required placeholder="Décrivez votre produit, état, quantité, etc."></textarea>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="adresse">Adresse</label>
+            <input type="text" id="adresse" name="adresse" required placeholder="Ville, quartier, ferme..." />
+          </div>
+          <div class="form-group">
+            <label for="coordonneeGPS">Coordonnées GPS</label>
+            <input type="text" id="coordonneeGPS" name="coordonneeGPS" placeholder="Latitude,Longitude" />
+          </div>
+        </div>
+
+        <div class="form-row form-buttons">
+          <button type="submit" class="btn-inscription">Ajouter au catalogue</button>
+          <button type="reset" class="btn-inscription btn-annuler">Annuler</button>
+        </div>
+      </form>
+    </div> 
+  </section>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const idField = document.getElementById('annonceId');
+      if (idField) {
+        idField.value = 'annonce-' + Date.now();
+      }
+    });
+  </script>
+</body>
+</html>
