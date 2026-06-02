@@ -23,7 +23,7 @@ class Product extends Model
 
     public function manufacturer(){
         return $this->belongsTo(Manufacturer::class);
-        // un produit peut appartenir à un fabricant d'intrants
+        // un produit peut appartenir à un fabricant d'intrants (après création)
     }
 
     public function producer(){
