@@ -392,7 +392,7 @@
     .btn-details,
     .btn-ajouter {
       text-decoration: none;
-      padding: 12px 24px;
+      padding: 10px 15px;
       border-radius: 10px;
       font-weight: 600;
       transition: 0.3s;
@@ -1936,3 +1936,165 @@
         right: 20px;
       }
     }
+
+
+
+
+
+
+
+
+ /* Architecture Structurale Principale */
+.market-workspace {
+  display: flex;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* Bloc Filtres Latéral */
+.board-filter-panel {
+  flex: 1;
+  min-width: 250px;
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.filter-panel-title {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.filter-input-wrapper {
+  margin-bottom: 15px;
+}
+
+.filter-input-wrapper label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.filter-input-wrapper input, 
+.filter-input-wrapper select {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.filter-submission-trigger {
+  width: 100%;
+  padding: 10px;
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Flux Central des Offres */
+.live-opportunities-stream {
+  flex: 3;
+}
+
+.stream-status-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.stream-main-heading {
+  margin: 0;
+}
+
+.opportunities-display-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Bloc unitaire d'Annonce (Carte) */
+.opportunity-display-card {
+  position: relative;
+  background: white;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.opportunity-status-tag {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+}
+
+.tag-type-sales { background-color: #2e7d32; }
+.tag-type-services { background-color: #0288d1; }
+.tag-type-requests { background-color: #ef6c00; }
+
+.opportunity-body-wrapper {
+  width: 100%;
+}
+
+.opportunity-timestamp {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.opportunity-headline {
+  margin: 5px 0;
+}
+
+.opportunity-headline a {
+  color: #222;
+  text-decoration: none;
+}
+
+.opportunity-geography {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 5px 0 10px 0;
+}
+
+.opportunity-action-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.opportunity-pricing-value {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2e7d32;
+}
+
+.lead-connection-trigger {
+  background: #333;
+  color: white;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+/* Version Écrans Mobiles */
+@media (max-width: 768px) {
+  .market-workspace {
+    flex-direction: column;
+  }
+}

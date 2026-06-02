@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Engrais disponibles – AgroMarché</title>
+  <title>Engrais disponibles – AgroNet</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -12,7 +12,7 @@
 <body>
 
   <header class="topbar">
-    <a href="accueil.html" class="logo">AgroMarché</a>
+    <a href="accueil.html" class="logo">AgroNet</a>
 
     <div class="search-wrap">
       <input type="text" placeholder="Rechercher un engrais..." />
@@ -123,7 +123,9 @@
             </div>
             <div class="price-row">
               <span class="price">22 000 FCFA</span>
-              <a href="#" class="btn-voir">Contacter</a>
+              <a href="#" class="btn-ajouter">
+                <i class="fas fa-basket-shopping"></i> Ajouter
+              </a>
             </div>
           </div>
         </div>
@@ -142,7 +144,9 @@
             </div>
             <div class="price-row">
               <span class="price">18 500 FCFA</span>
-              <a href="#" class="btn-voir">Contacter</a>
+              <a href="#" class="btn-ajouter">
+                <i class="fas fa-basket-shopping"></i> Ajouter
+              </a>
             </div>
           </div>
         </div>
@@ -160,7 +164,9 @@
             </div>
             <div class="price-row">
               <span class="price">7 000 FCFA</span>
-              <a href="#" class="btn-voir">Contacter</a>
+              <a href="#" class="btn-ajouter">
+                <i class="fas fa-basket-shopping"></i> Ajouter
+              </a>
             </div>
           </div>
         </div>
@@ -179,13 +185,14 @@
             </div>
             <div class="price-row">
               <span class="price">5 500 FCFA</span>
-              <a href="#" class="btn-voir">Contacter</a>
+              <a href="#" class="btn-ajouter">
+                <i class="fas fa-basket-shopping"></i> Ajouter
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section guide-section">
         <div class="section-header">
           <h2><i class="fa-solid fa-lightbulb"></i> Conseils d'utilisation</h2>
           <p>Quelques bonnes pratiques pour maximiser l'effet de vos intrants.</p>
@@ -207,55 +214,55 @@
             </p>
           </div>
         </div>
-      </section>
+      
     </div>
-
+  </main>
     <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo">AgroMarché</a>
-        <p>La plateforme qui connecte agriculteurs, fournisseurs et acheteurs du Bénin.</p>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo">AgroNet</a>
+          <p>La plateforme qui connecte agriculteurs, fournisseurs et acheteurs du Bénin.</p>
+        </div>
+        <div>
+          <h4>Catalogue</h4>
+          <ul>
+            <li><a href="engrais.html">Engrais</a></li>
+            <li><a href="semences.html">Semences</a></li>
+            <li><a href="produits_agri.html">Produits agricoles</a></li>
+            <li><a href="annonces.html">Annonces</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>À propos</h4>
+          <ul>
+            <li><a href="#">Qui sommes-nous</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="prix-marche.html">Prix / Marché</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Légal</h4>
+          <ul>
+            <li><a href="#">Conditions d'utilisation</a></li>
+            <li><a href="#">Confidentialité</a></li>
+            <li><a href="#">Cookies</a></li>
+          </ul>
+        </div>
       </div>
-      <div>
-        <h4>Catalogue</h4>
-        <ul>
-          <li><a href="engrais.html">Engrais</a></li>
-          <li><a href="semences.html">Semences</a></li>
-          <li><a href="produits_agri.html">Produits agricoles</a></li>
-          <li><a href="annonces.html">Annonces</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>À propos</h4>
-        <ul>
-          <li><a href="#">Qui sommes-nous</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="prix-marche.html">Prix / Marché</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <ul>
-          <li><a href="#">Conditions d'utilisation</a></li>
-          <li><a href="#">Confidentialité</a></li>
-          <li><a href="#">Cookies</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">&copy; 2025 AgroMarché — Tous droits réservés</div>
-  </footer>
+      <div class="footer-bottom">&copy; 2025 AgroNet — Tous droits réservés</div>
+    </footer>
 
-  <script>
-    // Gestion du filtre collapsible
-    const filterToggle = document.getElementById('filterToggle');
-    const filterContent = document.getElementById('filterContent');
+    <script>
+      // Gestion du filtre collapsible
+      const filterToggle = document.getElementById('filterToggle');
+      const filterContent = document.getElementById('filterContent');
 
-    filterToggle.addEventListener('click', function() {
-      filterContent.classList.toggle('expanded');
-      filterToggle.classList.toggle('active');
-    });
-  </script>
+      filterToggle.addEventListener('click', function () {
+        filterContent.classList.toggle('expanded');
+        filterToggle.classList.toggle('active');
+      });
+    </script>
 </body>
 
 </html>
