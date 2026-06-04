@@ -4,79 +4,173 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroNet – Publier une annonce</title>
+  <title>AgroNet – publier une annonce</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
-  
-  <!-- PUBLICATION -->
-  <section class="inscription-section publication-section">
-    <div class="inscription-container">
-      <div class="inscription-header">
+
+  <section class="agro-annonce-section">
+
+    <div class="agro-annonce-container">
+
+      <div class="agro-annonce-header">
         <h2>Publier une annonce</h2>
-        <p>Racontez votre offre, ajoutez une photo et partagez votre localisation pour toucher les acheteurs locaux.</p>
+        <p>
+          Créez une annonce attractive en sélectionnant les produits de votre catalogue.
+        </p>
       </div>
 
-      <form class="inscription-form" id="publicationForm" action="#" method="post" enctype="multipart/form-data">
-        <input type="hidden" id="annonceId" name="id" value="" />
+      <form class="agro-annonce-formulaire" id="agroFormPublication">
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="titre">Titre de l'annonce</label>
-            <input type="text" id="titre" name="titre" required placeholder="Ex: Vente de maïs local" />
+        <div class="agro-annonce-gauche">
+
+          <!-- Informations -->
+          <div class="agro-bloc-publication">
+
+            <h3>Informations générales</h3>
+
+            <div class="agro-champ-publication">
+
+              <label for="agroTitreAnnonce">
+                Titre de l'annonce
+              </label>
+
+              <input type="text" id="agroTitreAnnonce" placeholder="Ex : Vente de maïs et soja disponible">
+
+            </div>
+
+            <div class="agro-champ-publication">
+
+              <label for="agroDescriptionAnnonce">
+                Description
+              </label>
+
+              <textarea id="agroDescriptionAnnonce" rows="5" placeholder="Décrivez votre offre..."></textarea>
+
+            </div>
+
+            <div class="agro-champ-publication">
+
+              <label for="agroImageAnnonce">
+                Image de couverture
+              </label>
+
+              <input type="url" id="agroImageAnnonce" placeholder="Lien de l'image">
+
+            </div>
+
           </div>
-          <div class="form-group">
-            <label for="statut">Statut</label>
-            <select id="statut" name="statut" required>
-              <option value="Publié">Publié</option>
-              <option value="En attente">En attente</option>
-              <option value="Archivé">Archivé</option>
-            </select>
+
+          <!-- Catalogue -->
+          <div class="agro-bloc-publication">
+
+            <h3>Produits de mon catalogue</h3>
+
+            <div class="agro-catalogue-produits">
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🌽 Maïs</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🍅 Tomate</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🥔 Pomme de terre</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🌾 Riz</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🥜 Arachide</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🍍 Ananas</span>
+              </label>
+
+            </div>
+
           </div>
+
+          <!-- Localisation -->
+          <div class="agro-bloc-publication">
+
+            <h3>Localisation</h3>
+
+            <div class="agro-ligne-double">
+
+              <div class="agro-champ-publication">
+
+                <label for="agroAdresseAnnonce">
+                  Adresse
+                </label>
+
+                <input type="text" id="agroAdresseAnnonce" placeholder="Ville, quartier, ferme">
+
+              </div>
+
+              <div class="agro-champ-publication">
+
+                <label for="agroCoordonneesAnnonce">
+                  Coordonnées GPS
+                </label>
+
+                <input type="text" id="agroCoordonneesAnnonce" placeholder="Latitude, Longitude">
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="date_creation">Date de publication</label>
-            <input type="date" id="date_creation" name="date_creation" required />
+        <!-- Colonne droite -->
+        <div class="agro-annonce-droite">
+
+          <div class="agro-resume-annonce">
+
+            <h3>Résumé de l'annonce</h3>
+
+            <div class="agro-info-resume">
+              <span>Produits sélectionnés</span>
+              <strong>3</strong>
+            </div>
+
+            <div class="agro-info-resume">
+              <span>Quantité totale</span>
+              <strong>150 Kg</strong>
+            </div>
+
+            <div class="agro-info-resume agro-total-resume">
+              <span>Valeur estimée</span>
+              <strong>120 000 FCFA</strong>
+            </div>
+
+            <button type="submit" class="agro-btn-publication">
+              Publier l'annonce
+            </button>
+
           </div>
-          <div class="form-group">
-            <label for="photo">Photo de l'annonce</label>
-            <input type="url" id="photo" name="photo" placeholder="URL de l'image (facultatif)" />
-          </div>
+
         </div>
 
-        <div class="form-row">
-          <div class="form-group" style="grid-column: 1 / -1;">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" rows="6" required placeholder="Décrivez votre produit, état, quantité, etc."></textarea>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="adresse">Adresse</label>
-            <input type="text" id="adresse" name="adresse" required placeholder="Ville, quartier, ferme..." />
-          </div>
-          <div class="form-group">
-            <label for="coordonneeGPS">Coordonnées GPS</label>
-            <input type="text" id="coordonneeGPS" name="coordonneeGPS" placeholder="Latitude,Longitude" />
-          </div>
-        </div>
-
-        <button class="btn-prod-submit" type="submit">Publier l'annonce</button>
       </form>
-    </div> 
+
+    </div>
+
   </section>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const idField = document.getElementById('annonceId');
-      if (idField) {
-        idField.value = 'annonce-' + Date.now();
-      }
-    });
-  </script>
 </body>
+
 </html>
