@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  @vite(['resources/css/styles.css', 'resources/js/app.js'])
+  <title>AgroNet – publier une annonce</title>
+</head>
+
+<body>
+
+  <section class="agro-annonce-section">
+
+    <div class="agro-annonce-container">
+
+      <div class="agro-annonce-header">
+        <h2>Publier une annonce</h2>
+        <p>
+          Créez une annonce attractive en sélectionnant les produits de votre catalogue.
+        </p>
+      </div>
+
+      <form class="agro-annonce-formulaire" id="agroFormPublication">
+
+        <div class="agro-annonce-gauche">
+
+          <!-- Informations -->
+          <div class="agro-bloc-publication">
+
+            <h3>Informations générales</h3>
+
+            <div class="agro-champ-publication">
+
+              <label for="agroTitreAnnonce">
+                Titre de l'annonce
+              </label>
+
+              <input type="text" id="agroTitreAnnonce" placeholder="Ex : Vente de maïs et soja disponible">
+
+            </div>
+
+            <div class="agro-champ-publication">
+
+              <label for="agroDescriptionAnnonce">
+                Description
+              </label>
+
+              <textarea id="agroDescriptionAnnonce" rows="5" placeholder="Décrivez votre offre..."></textarea>
+
+            </div>
+
+            <div class="agro-champ-publication">
+
+              <label for="agroImageAnnonce">
+                Image de couverture
+              </label>
+
+              <input type="url" id="agroImageAnnonce" placeholder="Lien de l'image">
+
+            </div>
+
+          </div>
+
+          <!-- Catalogue -->
+          <div class="agro-bloc-publication">
+
+            <h3>Produits de mon catalogue</h3>
+
+            <div class="agro-catalogue-produits">
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🌽 Maïs</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🍅 Tomate</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🥔 Pomme de terre</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🌾 Riz</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🥜 Arachide</span>
+              </label>
+
+              <label class="agro-produit-selection">
+                <input type="checkbox">
+                <span>🍍 Ananas</span>
+              </label>
+
+            </div>
+
+          </div>
+
+          <!-- Localisation -->
+          <div class="agro-bloc-publication">
+
+            <h3>Localisation</h3>
+
+            <div class="agro-ligne-double">
+
+              <div class="agro-champ-publication">
+
+                <label for="agroAdresseAnnonce">
+                  Adresse
+                </label>
+
+                <input type="text" id="agroAdresseAnnonce" placeholder="Ville, quartier, ferme">
+
+              </div>
+
+              <div class="agro-champ-publication">
+
+                <label for="agroCoordonneesAnnonce">
+                  Coordonnées GPS
+                </label>
+
+                <input type="text" id="agroCoordonneesAnnonce" placeholder="Latitude, Longitude">
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Colonne droite -->
+        <div class="agro-annonce-droite">
+
+          <div class="agro-resume-annonce">
+
+            <h3>Résumé de l'annonce</h3>
+
+            <div class="agro-info-resume">
+              <span>Produits sélectionnés</span>
+              <strong>3</strong>
+            </div>
+
+            <div class="agro-info-resume">
+              <span>Quantité totale</span>
+              <strong>150 Kg</strong>
+            </div>
+
+            <div class="agro-info-resume agro-total-resume">
+              <span>Valeur estimée</span>
+              <strong>120 000 FCFA</strong>
+            </div>
+
+            <button type="submit" class="agro-btn-publication">
+              Publier l'annonce
+            </button>
+
+          </div>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+</body>
+
+</html>

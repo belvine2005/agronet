@@ -14,14 +14,26 @@ class UserController extends Controller
     public function index()
     {
         //
+        $users=User::all();
+        return view('users.index',compact('users')); 
     }
-
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
         //
+        return view('users.create');
+    }
+
+    public function login()
+    {
+        return view('users.login');
+    }
+
+    public function home()
+    {
+        return view('home');
     }
 
     /**
@@ -30,6 +42,16 @@ class UserController extends Controller
     public function store(StoreUserRequest $request)
     {
         //
+        $request->validate([
+            'name'=>'required',
+            'email'=>'required|email',
+            'password'=>'required',
+            'phone'=>'required|numeric|max:10',
+            'adresse'=>'required',
+        ]);
+
+        User::create($request->all());
+        return redirect()->route('users.index');
     }
 
     /**
@@ -37,7 +59,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('users.show', compact('user'));
     }
 
     /**
@@ -45,7 +67,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return view('users.edit', compact('user'));
     }
 
     /**
@@ -53,7 +75,9 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $user->update($request->all());
+
+        return redirect()->route('users.show', $user);
     }
 
     /**
@@ -61,7 +85,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return redirect()->route('users.index');
     }
 
 

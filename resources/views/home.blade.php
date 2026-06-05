@@ -13,7 +13,7 @@
 
   <!-- TOPBAR -->
   <header class="topbar">
-    <a href="\home" class="logo">AgroNet</a>
+    <a href="{{ route('home') }}" class="logo">AgroNet</a>
 
     <div class="search-wrap">
       <input type="text" placeholder="Rechercher un produit..." />
@@ -23,8 +23,8 @@
     </div>
 
     <div class="topbar-right">
-      <a href="prix-marche.html" class="link-marche">Prix / Marché</a>
-      <a href="connexion.html" class="btn-compte">
+      <a href="{{ route('products.prices') }}" class="link-marche">Prix / Marché</a>
+      <a href="#" class="btn-compte">
         <i class="fa-regular fa-user"></i>
         Compte
       </a>
@@ -33,30 +33,25 @@
 
   <!-- CATÉGORIES -->
   <nav class="catbar">
-    <a href="engrais.html" class="cat-link">
-      Engrais
+    <a href="{{ route('products.create') }}" class="cat-link">
+      Créer un produit
     </a>
-    <a href="semences.html" class="cat-link">
-      Semences
+    <a href="{{ route('ads.create') }}" class="cat-link">
+      Faire une annonce
     </a>
-    <a href="produits_agri.html" class="cat-link">
+    <a href="{{ route('products.index') }}" class="cat-link">
       Produits Agricoles
     </a>
-    <a href="\annonces" class="cat-link">
+    <a href="{{ route('ads.index') }}" class="cat-link">
       Annonces
     </a>
   </nav>
   <!--ACCUEIL -->
   <section id="accueil" class="section accueil">
-<div class="video-background">
-    <iframe
-        src="https://www.youtube.com/embed/85kTHwJ1Ju8?autoplay=1&loop=1&mute=1&playlist=85kTHwJ1Ju8&controls=0&showinfo=0&rel=0&modestbranding=1"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-    </iframe>
-</div>
-
+    <video autoplay muted loop>
+      <source src="https://www.pexels.com/fr-fr/download/video/3256392/?fps=29.97&h=2160&w=3840" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <div class="section-header2">
       <h1>Bienvenue sur AgroNet</h1>
       <p>Votre marché agricole en ligne pour acheter et vendre des produits agricoles au Bénin.</p>
@@ -351,26 +346,7 @@
     <div class="footer-bottom">&copy; 2025 AgroNet — Tous droits réservés</div>
   </footer>
 
-  <script>
-    // FAQ Accordion Functionality
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach(item => {
-      const question = item.querySelector('.faq-question');
-
-      question.addEventListener('click', () => {
-        // Fermer les autres items
-        faqItems.forEach(otherItem => {
-          if (otherItem !== item) {
-            otherItem.classList.remove('active');
-          }
-        });
-
-        // Toggle l'item actuel
-        item.classList.toggle('active');
-      });
-    });
-  </script>
+  <script src="app.js"> </script>
 
 </body>
 

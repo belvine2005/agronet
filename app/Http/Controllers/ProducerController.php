@@ -56,6 +56,7 @@ class ProducerController extends Controller
         //
     }
 
+
     /**
      * Remove the specified resource from storage.
      */
@@ -63,4 +64,6 @@ class ProducerController extends Controller
     {
         //
     }
+
+
 }
