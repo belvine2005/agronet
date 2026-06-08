@@ -32,5 +32,12 @@ class StoreproductRequest extends FormRequest
             'selling_unit' => 'nullable|string',
             'status' => 'nullable|string',
         ];
+
+    }
+
+    public function messages(){
+        return [
+            'name.required'=>'le nom '
+        ];
     }
 }

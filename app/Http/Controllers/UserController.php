@@ -46,8 +46,8 @@ class UserController extends Controller
             'name'=>'required',
             'email'=>'required|email',
             'password'=>'required',
-            'phone'=>'required|numeric|max:10',
-            'adresse'=>'required',
+            'phone'=>'nullable|numeric|max:10',
+            'adress_indication'=>'string|nullable',
         ]);
 
         User::create($request->all());

@@ -25,7 +25,6 @@ return new class extends Migration
             $table->softDeletes();
             
             $table->foreignId('owner_id')
-                  ->unique()
                   ->nullable()
                   ->constrained('users')
                   ->onDelete('set null');

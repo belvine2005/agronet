@@ -14,7 +14,7 @@
 					<p>Remplissez ce formulaire pour créer votre produit que ce soit un produit agricole ou un intrant. Les champs marqués d'une * sont obligatoires.</p>
 				</header>
 
-				<form class="prod-form" action="/create-products" method="post" enctype="multipart/form-data">
+				<form class="prod-form" action="{{ route('products.store') }}" method="post" enctype="multipart/form-data">
 					@csrf
 					@method('POST')
 					<div class="prod-form-row">
