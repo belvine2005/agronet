@@ -31,16 +31,34 @@ class ProductController extends Controller
      */
     public function store(StoreproductRequest $request)
     {
-        $request->validate([
+        $request->validated([
             'name' => 'required|string',
             'type' => 'required|string',
-            'status' => 'string',
-            'available_quantity' => 'numeric',
+            'status' => 'nullable|string',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image',
+            'selling_unit' => 'nullable|string',
+            'available_quantity' => 'required|numeric'
+        
         ]);
 
-        Product::create($request->all());
+        $validated = $request->validated();
 
-        return redirect()->route('products.index');
+        return $request->all();
+        
+        $validated['owner_id'] = auth()->id();
+
+        if ($request->hasFile('image')) {
+            $path = $request->file('image')->store('products', 'public');
+            $validated['image'] = $path;
+        }
+
+        Product::create($validated);
+
+
+        return redirect()
+            ->route('products.index')
+            ->with('success','Produit enregistré avec succès !');
     }
 
     /**

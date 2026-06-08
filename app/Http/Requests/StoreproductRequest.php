@@ -12,7 +12,7 @@ class StoreproductRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,6 +24,13 @@ class StoreproductRequest extends FormRequest
     {
         return [
             //
+            'name' =>'required|string|max:255',
+            'type' => 'required|string',
+            'available_quantity' => 'required|numeric|min:0',
+            'description' => 'nullable|string',
+            'image' => 'nullable|image|mimes:jpeg,png,gif,jpg',
+            'selling_unit' => 'nullable|string',
+            'status' => 'nullable|string',
         ];
     }
 }

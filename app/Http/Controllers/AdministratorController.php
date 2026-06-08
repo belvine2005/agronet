@@ -63,4 +63,8 @@ class AdministratorController extends Controller
     {
         //
     }
+
+    public function admin(){
+        return view('admin.page');
+    }
 }

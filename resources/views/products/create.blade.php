@@ -4,7 +4,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Créer un produit agricole / intrant</title>
-		@vite(['resources/css/styles.css', 'resources/js/app.js'])
+		@vite(['resources/css/styles.css'])
 	</head>
 	<body>
 		<main class="prod-section">
@@ -14,21 +14,23 @@
 					<p>Remplissez ce formulaire pour créer votre produit que ce soit un produit agricole ou un intrant. Les champs marqués d'une * sont obligatoires.</p>
 				</header>
 
-				<form class="prod-form" action="#" method="post" enctype="multipart/form-data">
+				<form class="prod-form" action="/create-products" method="post" enctype="multipart/form-data">
+					@csrf
+					@method('POST')
 					<div class="prod-form-row">
 						<div class="prod-form-group">
 							<label for="nom">Nom du produit *</label>
-							<input class="prod-input" id="nom" name="nom" type="text" placeholder="Ex : Engrais organique XYZ" required />
+							<input class="prod-input" id="nom" name="name" value="{{ old('name') }}" type="text" placeholder="Ex : Engrais organique XYZ" required />
 						</div>
 
 						<div class="prod-form-group">
 							<label for="type">Type de produit / intrant *</label>
 							<select class="prod-select" id="type" name="type" required>
-								<option value="">-- Choisir un type --</option>
-								<option>Semence</option>
-								<option>Engrais</option>
-								<option>Produit agricole</option>
-								<option>Autre</option>
+								<option>-- Choisir un type --</option>
+								<option value="Semence">Semence</option>
+								<option value="Engrais">Engrais</option>
+								<option value="Produit agricole">Produit agricole</option>
+								<option value="Autre">Autre</option>
 							</select>
 						</div>
 					</div>
@@ -36,35 +38,35 @@
 					<div class="prod-form-row">
 						<div class="prod-form-group">
 							<label for="quantite">Quantité disponible (unités) *</label>
-							<input class="prod-input" id="quantite" name="quantite_disponible" type="number" min="0" step="1" value="0" required />
+							<input class="prod-input" id="quantite" name="available_quantity" value="{{ old('available_quantity') }}" type="number" min="0" step="10" value="0" required />
 						</div>
 
-						<div class="prod-form-group">
+						{{-- <div class="prod-form-group">
 							<label for="prix">Prix unitaire (FCFA)</label>
-							<input class="prod-input" id="prix" name="prix" type="number" min="0" step="0.01" placeholder="Ex : 2500" />
-						</div>
+							<input class="prod-input" id="prix" name="price" value="{{ old('price') }}" type="number" min="0" step="0.01" placeholder="Ex : 2500" />
+						</div> --}}
 					</div>
 
 					<div class="prod-form-group">
 						<label for="description">Description</label>
-						<textarea class="prod-textarea" id="description" name="description" placeholder="Donnez des détails sur l'état, l'emballage, l'utilisation..." rows="5"></textarea>
+						<textarea class="prod-textarea" id="description" name="description" value="{{ old('description') }}" placeholder="Donnez des détails sur l'état, l'emballage, l'utilisation..." rows="5"></textarea>
 					</div>
 
 					<div class="prod-form-row">
 						<div class="prod-form-group">
 							<label for="image">Image du produit</label>
-							<input class="prod-input" id="image" name="image" type="file" accept="image/*" />
+							<input class="prod-input" id="image" name="image" value="{{ old('image') }}" type="file" accept="image/*" />
 						</div>
 
 						<div class="prod-form-group">
 							<label for="unite">Unité de vente</label>
-							<input class="prod-input" id="unite" name="unite" type="text" placeholder="Ex : kg, sac, litre, unité" />
+							<input class="prod-input" id="unite" name="selling_unit" value="{{ old('selling_unit') }}" type="text" placeholder="Ex : kg, sac, litre, unité" />
 						</div>
 					</div>
 
 					<div class="prod-form-group prod-note">
-						<label for="contact">Contact du vendeur</label>
-						<input class="prod-input" id="contact" name="contact" type="text" placeholder="Téléphone ou adresse e-mail" />
+						<label for="status">Statut</label>
+						<input class="prod-input" id="status" name="status" value="{{ old('status') }}" type="text" placeholder="disponible ou non disponible" />
 					</div>
 					 <div class="form-row form-buttons">
           <button type="submit" class="btn-inscription">Ajouter au catalogue</button>

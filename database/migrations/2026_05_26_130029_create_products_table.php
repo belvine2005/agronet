@@ -17,8 +17,11 @@ return new class extends Migration
 
             $table->string('name');
             $table->string('type');
-            $table->string('status');
+            $table->string('description')->nullable();
+            $table->string('image')->nullable();
+            $table->string('status')->default('available');
             $table->double('available_quantity');
+            $table->string('selling_unit')->nullable();
             $table->softDeletes();
             
             $table->foreignId('owner_id')

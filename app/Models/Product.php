@@ -18,7 +18,11 @@ class Product extends Model
         'name',
         'type',
         'status',
-        'available_quantity'
+        'description',
+        'image',
+        'available_quantity',
+        'selling_unit',
+        'owner_id',
     ];
 
     public function manufacturer(){
