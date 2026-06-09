@@ -1,51 +1,9 @@
-<!DOCTYPE html>
-<html lang="fr">
+@extends('layouts.app')
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroNet – Votre marché agricole en ligne</title>
-  @vite(['resources/css/styles.css', 'resources/js/app.js'])
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
+@section('title', 'Accueil')
 
-<body>
+@section('content')
 
-  <!-- TOPBAR -->
-  <header class="topbar">
-    <a href="{{ route('home') }}" class="logo">AgroNet</a>
-
-    <div class="search-wrap">
-      <input type="text" placeholder="Rechercher un produit..." />
-      <button class="search-btn" aria-label="Rechercher">
-        <i class="fa-solid fa-search"></i>
-      </button>
-    </div>
-
-    <div class="topbar-right">
-      <a href="{{ route('products.prices') }}" class="link-marche">Prix / Marché</a>
-      <a href="#" class="btn-compte">
-        <i class="fa-regular fa-user"></i>
-        Compte
-      </a>
-    </div>
-  </header>
-
-  <!-- CATÉGORIES -->
-  <nav class="catbar">
-    <a href="{{ route('products.create') }}" class="cat-link">
-      Créer un produit
-    </a>
-    <a href="{{ route('ads.create') }}" class="cat-link">
-      Faire une annonce
-    </a>
-    <a href="{{ route('products.index') }}" class="cat-link">
-      Produits Agricoles
-    </a>
-    <a href="{{ route('ads.index') }}" class="cat-link">
-      Annonces
-    </a>
-  </nav>
   <!--ACCUEIL -->
   <section id="accueil" class="section accueil">
     <video autoplay muted loop>
@@ -308,46 +266,4 @@
 
     </div>
   </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo">AgroNet</a>
-        <p>La plateforme qui connecte agriculteurs, fournisseurs et acheteurs du Bénin.</p>
-      </div>
-      <div>
-        <h4>Catalogue</h4>
-        <ul>
-          <li><a href="engrais.html">Engrais</a></li>
-          <li><a href="semences.html">Semences</a></li>
-          <li><a href="produits_agri.html">Produits agricoles</a></li>
-          <li><a href="annonces.html">Annonces</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>À propos</h4>
-        <ul>
-          <li><a href="#">Qui sommes-nous</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="prix-marche.html">Prix / Marché</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Légal</h4>
-        <ul>
-          <li><a href="#">Conditions d'utilisation</a></li>
-          <li><a href="#">Confidentialité</a></li>
-          <li><a href="#">Cookies</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">&copy; 2025 AgroNet — Tous droits réservés</div>
-  </footer>
-
-  <script src="app.js"> </script>
-
-</body>
-
-</html>
+@endsection

@@ -29,7 +29,8 @@
         </div>
 
         <button type="submit" class="btn-connexion">Se connecter</button>
-        <p class="register-link">Vous n'avez pas de compte? <a href="inscription.html">Inscrivez-vous</a></p>
+        <p class="register-link">Vous n'avez pas de compte? <a href="{{ route('users.create') }}">Inscrivez-vous</a></p>
+        
       </form>
     </div>
   </section>
