@@ -29,8 +29,10 @@
 								<option>-- Choisir un type --</option>
 								<option value="Semence">Semence</option>
 								<option value="Engrais">Engrais</option>
-								<option value="Produit agricole">Produit agricole</option>
-								<option value="Autre">Autre</option>
+								<option value="Céréale">Céréale</option>
+								<option value="Fruit">Fruit</option>
+								<option value="Légume">Légume</option>
+								<option value="Autre produit agricole">Autre</option>
 							</select>
 						</div>
 					</div>

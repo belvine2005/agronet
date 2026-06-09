@@ -5,17 +5,22 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreproductRequest;
 use App\Http\Requests\UpdateproductRequest;
+use Illuminate\Support\Facades\DB;
+use Illuminate\View\View;
 
 class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        $products = Product::all();
+        // $products = Product::all();
+        // return view('products.index', compact('products'));
 
-        return view('products.index', compact('products'));
+        return view('products.index', [
+            'products' => DB::table('products')->paginate(3)
+        ]);
     }
 
     /**
