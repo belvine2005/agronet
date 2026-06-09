@@ -13,7 +13,7 @@
 
       <div class="panier-card">
         <div class="panier-card-img">
-          <img src="images/b2.jpg" alt="Engrais NPK" />
+          <img src="{{ Vite::asset('resources/images/b2.jpg') }}" alt="Engrais NPK" />
         </div>
         <div class="panier-card-details">
           <h3>Engrais NPK - Sac de 25 kg</h3>
@@ -31,7 +31,7 @@
 
       <div class="panier-card">
         <div class="panier-card-img">
-          <img src="images/a12.jpg" alt="Semences de maïs" />
+          <img src="{{ Vite::asset('resources/images/a12.jpg') }}" alt="Semences de maïs" />
         </div>
         <div class="panier-card-details">
           <h3>Semences de maïs - Sac de 50 kg</h3>

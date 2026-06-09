@@ -56,7 +56,7 @@
         
         <article class="annonce-card">
           <span class="badge-type cereale">Vivrier</span>
-          <img src="images/b9.jpg" alt="Cossettes de Manioc" class="annonce-image"  />
+          <img src="{{ Vite::asset('resources/images/b9.jpg') }}" alt="Cossettes de Manioc" class="annonce-image"  />
           <div class="annonce-content">
             <h3>Cossettes de Manioc de Qualité</h3>
             <p class="product-vendor"><i class="fa-solid fa-user-wheat"></i> Groupement d'Agriculteurs de Savalou</p>

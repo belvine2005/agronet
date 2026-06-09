@@ -69,7 +69,7 @@
 
         <div class="annonce-card">
           <div class="badge-type">Minéral</div>
-          <img src="images/b2.jpg" alt="Engrais NPK 15-15-15" class="annonce-image" />
+          <img src="{{ Vite::asset('resources/images/b2.jpg') }}" alt="Engrais NPK 15-15-15" class="annonce-image" />
           <div class="annonce-content">
             <h3>Engrais NPK 15-15-15</h3>
             <p class="product-vendor"><i class="fa-solid fa-store"></i> Sodéco SA</p>
@@ -89,7 +89,7 @@
 
         <div class="annonce-card">
           <div class="badge-type">Minéral</div>
-          <img src="images/b7.jpg" alt="Urée 46%" class="annonce-image" />
+          <img src="{{ Vite::asset('resources/images/b7.jpg') }}" alt="Urée 46%" class="annonce-image" />
           <div class="annonce-content">
             <h3>Urée 46%</h3>
             <p class="product-vendor"><i class="fa-solid fa-user"></i> ETS Bio-Agri</p>
@@ -110,7 +110,7 @@
 
         <div class="annonce-card">
           <div class="badge-type organique">Organique</div>
-          <img src="images/b6.jpg" alt="Compost Enrichi" class="annonce-image" />
+          <img src="{{ Vite::asset('resources/images/b6.jpg') }}" alt="Compost Enrichi" class="annonce-image" />
           <div class="annonce-content">
             <h3>Compost Organique Enrichi</h3>
             <p class="product-vendor"><i class="fa-solid fa-leaf"></i> Ferme Verte Bénin</p>
@@ -130,7 +130,7 @@
 
         <div class="annonce-card">
           <div class="badge-type liquide">Liquide</div>
-          <img src="images/b5.jpg" alt="Bio-Stimulant Liquide" class="annonce-image" />
+          <img src="{{ Vite::asset('resources/images/b5.jpg') }}" alt="Bio-Stimulant Liquide" class="annonce-image" />
           <div class="annonce-content">
             <h3>Engrais Foliaire Liquide</h3>
             <p class="product-vendor"><i class="fa-solid fa-store"></i> Agri-Input Bénin</p>

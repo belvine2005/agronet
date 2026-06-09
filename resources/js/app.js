@@ -1,3 +1,9 @@
+// Cette ligne dit à Vite d'inclure toutes les images de ce dossier
+import.meta.glob([
+  '../images/**',
+]);
+
+
 
 
     // FAQ Accordion Functionality

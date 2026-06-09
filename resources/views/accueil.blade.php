@@ -27,7 +27,7 @@
       <!-- Carte 1 -->
       <div class="annonce-card">
         <div class="image-container">
-          <img src="images/b1.jpg" alt="Manioc frais" class="annonce-image">
+          <img src={{ Vite::asset('resources/images/b1.jpg') }} alt="Manioc frais" class="annonce-image">
           <span class="badge-qte">100 kg</span>
         </div>
 
@@ -55,7 +55,7 @@
       <!-- Carte 2 -->
       <div class="annonce-card">
         <div class="image-container">
-          <img src="images/a12.jpg" alt="Semences de maïs" class="annonce-image">
+          <img src={{ Vite::asset('resources/images/a12.jpg') }} alt="Semences de maïs" class="annonce-image">
           <span class="badge-qte">50 kg</span>
         </div>
 
@@ -83,7 +83,7 @@
       <!-- Carte 3 -->
       <div class="annonce-card">
         <div class="image-container">
-          <img src="images/b2.jpg" alt="Engrais NPK" class="annonce-image">
+          <img src={{ Vite::asset('resources/images/b2.jpg') }} alt="Engrais NPK" class="annonce-image">
           <span class="badge-qte">25 kg</span>
         </div>
 

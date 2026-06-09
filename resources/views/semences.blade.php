@@ -57,7 +57,7 @@
 
         <article class="annonce-card">
           <span class="badge-type cereale">Céréale</span>
-          <img src="images/b8.jpg" alt="Semences de Maïs Hybride" class="annonce-image" />
+          <img src="{{ Vite::asset('resources/images/b8.jpg') }}" alt="Semences de Maïs Hybride" class="annonce-image" />
           <div class="annonce-content">
             <h3>Maïs Hybride DMR-ESR-W</h3>
             <p class="product-vendor"><i class="fa-solid fa-store"></i> SoNaMA Bénin</p>
@@ -78,7 +78,7 @@
 
         <article class="annonce-card">
           <span class="badge-type maraichere">Maraîchère</span>
-          <img src="images/b3.jpg" alt="Semences de Piment" class="annonce-image" />
+          <img src="{{ Vite::asset('resources/images/b3.jpg') }}" alt="Semences de Piment" class="annonce-image" />
           <div class="annonce-content">
             <h3>Piment Gbatakin Sélectionné</h3>
             <p class="product-vendor"><i class="fa-solid fa-store"></i> Coopérative Vert-Bénin</p>
@@ -100,7 +100,7 @@
 
         <article class="annonce-card">
           <span class="badge-type legumineuse">Légumineuse</span>
-          <img src="images/a18.jpg" alt="Semences de Soja" class="annonce-image" />
+          <img src="{{ Vite::asset('resources/images/a18.jpg') }}" alt="Semences de Soja" class="annonce-image" />
           <div class="annonce-content">
             <h3>Soja Grains - Variété TGX</h3>
             <p class="product-vendor"><i class="fa-solid fa-store"></i> AgriFournisseurs Nord</p>
@@ -122,7 +122,7 @@
 
         <article class="annonce-card">
           <span class="badge-type cereale">Céréale</span>
-          <img src="images/b4.jpg" alt="Semences de Riz" class="annonce-image"
+          <img src="{{ Vite::asset('resources/images/b4.jpg') }}" alt="Semences de Riz" class="annonce-image"
             onerror="this.src='https://images.unsplash.com/photo-1536304997881-a372c179924b?w=500&auto=format&fit=crop&q=60';" />
           <div class="annonce-content">
             <h3>Riz NERICA 4 Certifié</h3>
