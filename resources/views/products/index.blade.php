@@ -21,10 +21,22 @@
     </div>
 
     <div class="topbar-right">
-      <a href="{{ route('products.prices') }}" class="link-marche">Prix / Marché</a>
+      <a href="{{ route('prices-market.index') }}" class="link-marche">Prix / Marché</a>
       <a href="#" class="btn-compte">
         <i class="fa-regular fa-user"></i>
-        Compte
+        @auth
+          {{ Auth::user()->name }}
+          <form action="{{ route('auth.logout') }}" method="post">
+            @method('delete')
+            @csrf
+            <button>Se déconnecter</button>
+
+          </form>
+        @endauth
+
+        @guest
+          <a href="{{ route('auth.login') }}">Se connecter</a>
+        @endguest
       </a>
     </div>
   </header>

@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\AdministratorController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PricesMarketController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\ProductController;
@@ -12,22 +14,32 @@ Route::get('/', function () {
 
 
 
-Route::get('/login', [UserController::class, 'login'])->name('users.login');
+Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 // route pour la page de connexion
+
+Route::post('/login', [AuthController::class, 'doLogin'])->name('auth.doLogin');
+
+Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
+
+
+Route::middleware('auth')->group(function() {           // middleware pour l'authentification(bootstrap/app.php)
+
+    Route::resource('users', UserController::class);    
+    Route::resource('products', ProductController::class);
+    Route::resource('ads', AdController::class);
+    Route::resource('prices-market',PricesMarketController::class);
+
+});
 
 Route::get('/home',[UserController::class,'home'])->name('home');
 // route pour la page d'acceuil
 
-Route::get('/prices',[ProductController::class,'prices'])->name('products.prices');
+
 // route pour la page des prix
 Route::get('/admin',[AdministratorController::class,'admin'])->name('admin.page');
 
-Route::resource('users', UserController::class);
-Route::resource('products', ProductController::class);
-Route::resource('ads', AdController::class);
 
-Route::post('create-products', function(){
-    return 'hello';
-});
+
+
 
 

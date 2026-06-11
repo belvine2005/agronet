@@ -14,6 +14,8 @@ class PricesMarketController extends Controller
     public function index()
     {
         //
+
+        return view('prices-market.price');
     }
 
     /**

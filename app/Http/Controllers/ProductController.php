@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Http\Requests\StoreproductRequest;
 use App\Http\Requests\UpdateproductRequest;
+use Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\View;
 
@@ -17,6 +18,8 @@ class ProductController extends Controller
     {
         // $products = Product::all();
         // return view('products.index', compact('products'));
+        // dd(Auth::user());
+        
 
         return view('products.index', [
             'products' => DB::table('products')->paginate(3)

@@ -21,7 +21,7 @@
     </div>
 
     <div class="topbar-right">
-      <a href="{{ route('products.prices') }}" class="link-marche">Prix / Marché</a>
+      <a href="{{ route('prices-market.index') }}" class="link-marche">Prix / Marché</a>
       <a href="#" class="btn-compte">
         <i class="fa-regular fa-user"></i>
         Compte
