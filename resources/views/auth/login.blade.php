@@ -18,7 +18,11 @@
         <p>Connectez-vous à votre compte AgroNet</p>
       </div>
 
-      <form method="POST" action="{{ route('auth.login') }}" >
+      @if (session('success'))
+        <p class="success-message">{{ session('success') }}</p>
+      @endif
+
+      <form method="POST" action="{{ route('auth.doLogin') }}" >
         @csrf
         <div class="form-group">
           <label for="email">Email</label>
@@ -37,7 +41,7 @@
         </div>
 
         <button class="btn-connexion" type="submit">Se connecter</button>
-        <p class="register-link">Vous n'avez pas de compte? <a href="#">Inscrivez-vous</a></p>
+        <p class="register-link">Vous n'avez pas de compte? <a href="{{ route('auth.register') }}">Inscrivez-vous</a></p>
       </form>
     </div>
   </section>

@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterRequest;
+use App\Models\Manufacturer;
+use App\Models\Producer;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -33,6 +37,35 @@ class AuthController extends Controller
     }
     
 
+
+
+    public function register()
+    {
+        return view('auth.register');
+    }
+
+    public function doRegister(RegisterRequest $request)
+    {
+        $data = $request->validated(); // récupération des données après validation dans RegisterRequest.php
+
+        $user = User::create([
+            'name' => $data['prenom'] . ' ' . $data['nom'],
+            'email' => $data['email'],
+            'password' => $data['password'], // hashé automatiquement par le cast 'password' => 'hashed' du modèle User
+            'phone' => $data['phone'],
+            'bio' => $data['bio'] ?? null,
+            'adress_indication' => $data['adress_indication'],
+        ]);
+
+        // selon le profil choisi, on relie le compte à la table producers ou manufacturers
+        if ($data['role'] === 'producteur') {
+            Producer::forceCreate(['user_id' => $user->id]);
+        } elseif ($data['role'] === 'fournisseur') {
+            Manufacturer::forceCreate(['user_id' => $user->id]);
+        }
+
+        return to_route('auth.login')->with('success', 'Votre compte a été créé. Connectez-vous pour accéder à l\'application.');
+    }
 
 
     public function doLogin(LoginRequest $request)

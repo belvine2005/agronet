@@ -19,6 +19,11 @@ Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 
 Route::post('/login', [AuthController::class, 'doLogin'])->name('auth.doLogin');
 
+Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+// route pour la page d'inscription
+
+Route::post('/register', [AuthController::class, 'doRegister'])->name('auth.doRegister');
+
 Route::delete('/logout', [AuthController::class, 'logout'])->name('auth.logout');
 
 
