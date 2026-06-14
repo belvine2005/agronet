@@ -1,49 +1,59 @@
+@extends('layouts.guest')
 
-<!DOCTYPE html>
-<html lang="fr">
+@section('title', 'Connexion – AgroNet')
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgroNet – Connexion</title>
-  @vite(['resources/css/styles.css', 'resources/js/app.js'])
-</head>
+@section('content')
+    @if (session('success'))
+        <p class="mb-4 text-sm text-green-600">{{ session('success') }}</p>
+    @endif
 
-<body>
-  <!-- CONNEXION -->
-  <section class="connexion-section">
-    <div class="connexion-container">
-      <div class="connexion-header">
-        <h2>Se connecter</h2>
-        <p>Connectez-vous à votre compte AgroNet</p>
-      </div>
-
-      @if (session('success'))
-        <p class="success-message">{{ session('success') }}</p>
-      @endif
-
-      <form method="POST" action="{{ route('auth.doLogin') }}" >
+    <form method="POST" action="{{ route('auth.doLogin') }}">
         @csrf
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required placeholder="votre.email@exemple.com" value="{{ old('email') }}">
-          @error('email')
-            <span class="error-message">{{ $message }}</span>
-          @enderror
-        </div>
+        <flux:fieldset>
+          <flux:legend>Shipping adress</flux:legend>
 
-        <div class="form-group">
-          <label for="password">Mot de passe</label>
-          <input type="password" id="password" name="password" required placeholder="Votre mot de passe" >
-          @error('password')
-            <span class="error-message">{{ $message }}</span>
-          @enderror
-        </div>
+            <div>
+                <flux:heading size="lg">Log in to your account</flux:heading>
+                <flux:text class="mt-2">Welcome back!</flux:text>
+            </div>
 
-        <button class="btn-connexion" type="submit">Se connecter</button>
-        <p class="register-link">Vous n'avez pas de compte? <a href="{{ route('auth.register') }}">Inscrivez-vous</a></p>
+
+              <flux:field>
+
+                <flux:label>Email</flux:label>
+
+                <flux:input wire:model="email" type="email" name="email" placeholder="Your email address" value="{{ old('email') }}" />
+
+                <flux:error name="email" />
+
+              </flux:field>
+              
+
+              
+              <flux:field>
+
+                  <flux:label>Password</flux:label>
+
+                  {{-- <flux:link href="#" variant="subtle" class="text-sm">Forgot password?</flux:link> --}}
+
+                
+                <flux:input type="password" name="password" placeholder="Your password"/>
+
+                <flux:error name="password" />
+
+              </flux:field>
+
+            
+                    
+
+              <div>
+
+                <flux:button variant="primary" class="w-full" type="submit">Log in</flux:button>
+
+                <flux:button variant="ghost" class="w-full" href="{{ route('auth.register') }}">Sign up for a new account</flux:button>
+
+              </div>
+            
+        </flux:fieldset>
       </form>
-    </div>
-  </section>
-</body>
-</html>
+@endsection

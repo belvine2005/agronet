@@ -29,6 +29,10 @@ class AuthController extends Controller
 
     // }
 
+    public function role(){
+        
+    }
+
         public function logout()
     {
         Auth::logout();                         // déconnexion de l'utilisateur 

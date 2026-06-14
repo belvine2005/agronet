@@ -13,6 +13,9 @@ Route::get('/', function () {
 });
 
 
+Route::get('/test', function(){
+    return view ('test');
+});
 
 Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 // route pour la page de connexion

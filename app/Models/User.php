@@ -11,7 +11,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\DB;
 
+/**
+ * @property-read string $firstName
+ * @property-read string $roleLabel
+ */
 #[Fillable(['name', 'email', 'password', 'bio', 'phone', 'adress_indication'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
@@ -75,8 +80,22 @@ class User extends Authenticatable
     }
 
 
+    public function getFirstNameAttribute(): string
+    {
+        return explode(' ', $this->name)[0];
+    }
 
-
+// fonction pour retourner le role d'un user selon la table qui le spécialise
+    public function getRoleLabelAttribute(): string
+    {
+        if (DB::table('producers')->where('user_id', $this->id)->exists()) { //si l'id d'un user existe dans la table producteur alors:
+            return 'Producteur';                                                //afficher producteur
+        }
+        if (DB::table('manufacturers')->where('user_id', $this->id)->exists()) { // idem pour fabricant
+            return 'Fabricant';
+        }
+        return 'Acheteur';//au cas contraire retourne acheteur
+    }
 }
 
 
