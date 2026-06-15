@@ -92,7 +92,7 @@ class User extends Authenticatable
             return 'Producteur';                                                //afficher producteur
         }
         if (DB::table('manufacturers')->where('user_id', $this->id)->exists()) { // idem pour fabricant
-            return 'Fabricant';
+            return 'Fournisseur';
         }
         return 'Acheteur';//au cas contraire retourne acheteur
     }

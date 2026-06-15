@@ -13,7 +13,7 @@ new class extends Component
         <flux:text class="text-green-600">{{ session('success') }}</flux:text>
     @endif
 
-    <form method="POST" action="{{ route('auth.doLogin') }}">
+    <form method="POST" action="{{ route('auth.doRegister') }}">
         @csrf
         <div class="space-y-6">
             <div>
@@ -22,9 +22,11 @@ new class extends Component
             </div>
 
             <div class="grid grid-cols-2 gap-4">
-                <flux:input label="First name" placeholder="River" />
+                <flux:input label="First name" name="prenom" placeholder="River" value="{{ old('prenom') }}" />
 
-                <flux:input label="Last name" placeholder="Porzio" />
+                <flux:input label="Last name" name="nom" placeholder="Porzio" value="{{ old('nom') }}" />
+                <flux:error name="prenom" />
+                <flux:error name="nom" />
             </div>
             
             <div class="grid grid-cols-2 gap-3">
@@ -33,11 +35,12 @@ new class extends Component
                 <flux:error name="email" />
                 <flux:error name="phone" />
                 <flux:field>
-                    <flux:input label="Password" type="password" placeholder="Enter your password" class="max-w-sm" />
-                    <flux:input label="Confirm Password" type="password" placeholder="Confirm your password" class="max-w-sm" />
+                    <flux:input label="Password" type="password" name="password" placeholder="Enter your password" class="max-w-sm" />
+                    <flux:input label="Confirm Password" type="password" name="password_confirmation" placeholder="Confirm your password" class="max-w-sm" />
+                    <flux:error name="password" />
                 </flux:field>
 
-                <flux:radio.group label="Role">
+                <flux:radio.group label="Role" name="role">
                 <flux:radio
                     name="role"
                     value="acheteur" 
@@ -47,18 +50,29 @@ new class extends Component
                 />
                 <flux:radio
                     name="role"
-                    value="produteur" 
+                    value="producteur"
                     label="Producteur"
                     description="Vous souhaitez vendre des produits agricoles."
                 />
                 <flux:radio
                     name="role"
-                    value="fournisseur" 
+                    value="fournisseur"
                     label="Fournisseur"
                     description="Vous souhaitez fournir des intrants agricoles."
                 />
+                <flux:error name="role" />
             </flux:radio.group>
             </div>
+
+            <flux:input label="Adresse" name="adress_indication" placeholder="Votre adresse complète" value="{{ old('adress_indication') }}" />
+            <flux:error name="adress_indication" />
+
+            <flux:textarea label="Biographie" name="bio" placeholder="Parlez-nous de vous, de votre activité agricole...">{{ old('bio') }}</flux:textarea>
+            <flux:error name="bio" />
+
+            <flux:checkbox name="conditions" value="1" label="J'accepte les conditions d'utilisation et la politique de confidentialité" :checked="(bool) old('conditions')" />
+            <flux:error name="conditions" />
+
             <div class="space-y-2">
                 <flux:button variant="primary" class="w-full" type="submit">Create account</flux:button>
                 <flux:button variant="ghost" class="w-full" href="{{ route('auth.login') }}">Already have an account? Log in</flux:button>
