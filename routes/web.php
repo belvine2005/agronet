@@ -13,6 +13,10 @@ Route::livewire('/post/create', 'pages::post.create');
 
 Route::livewire('/auth/login', 'pages::auth.login')->name('auth.login');
 
+Route::livewire('/auth/register', 'pages::auth.register')->name('auth.register');
+
+
+
 Route::get('/', function () {
     return to_route('auth.login');
 });
@@ -27,9 +31,13 @@ Route::get('/login', [AuthController::class, 'login']);
 
 Route::post('/login', [AuthController::class, 'doLogin'])->name('auth.doLogin');
 
-Route::get('/register',function(){
-    return view('authentic.register');
-})->name('auth.register');
+
+
+
+
+//Route::get('/register',function(){
+   // return view('authentic.register');
+//})->name('auth.register');
 // route pour la page d'inscription
 
 Route::post('/register', [AuthController::class, 'doRegister'])->name('auth.doRegister');
