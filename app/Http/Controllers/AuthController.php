@@ -17,7 +17,7 @@ class AuthController extends Controller
     public function login()
     {
         
-        return view('auth.login');
+        return to_route('auth.login');
     }
 
     // public function logout(LoginRequest $request)

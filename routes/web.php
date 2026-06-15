@@ -8,8 +8,13 @@ use App\Http\Controllers\AdController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 
+
+Route::livewire('/post/create', 'pages::post.create');
+
+Route::livewire('/auth/login', 'pages::auth.login')->name('auth.login');
+
 Route::get('/', function () {
-    return view ('welcome');
+    return to_route('auth.login');
 });
 
 

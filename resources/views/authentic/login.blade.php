@@ -1,5 +1,3 @@
-@extends('layouts.guest')
-
 @section('title', 'Connexion – AgroNet')
 
 @section('content')
