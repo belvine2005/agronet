@@ -22,12 +22,14 @@ Route::get('/test', function(){
     return view ('test');
 });
 
-Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
-// route pour la page de connexion
+Route::get('/login', [AuthController::class, 'login']);
+// alias historique : redirige vers la page de connexion (route nommée 'auth.login' = livewire ci-dessus)
 
 Route::post('/login', [AuthController::class, 'doLogin'])->name('auth.doLogin');
 
-Route::get('/register', [AuthController::class, 'register'])->name('auth.register');
+Route::get('/register',function(){
+    return view('authentic.register');
+})->name('auth.register');
 // route pour la page d'inscription
 
 Route::post('/register', [AuthController::class, 'doRegister'])->name('auth.doRegister');

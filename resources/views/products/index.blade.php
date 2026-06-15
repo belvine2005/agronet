@@ -123,7 +123,7 @@
               </div>
               
               <div class="price-row">
-                <span class="price">{{ $product->selling_unit }}</span>
+                <span class="price"></span>
                 <a href="#" class="btn-ajouter">
                   <i class="fas fa-basket-shopping"></i> Ajouter
                 </a>
