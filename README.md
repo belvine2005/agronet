@@ -154,7 +154,7 @@ Le schéma relationnel respecte la cohérence des clés étrangères et l'usage 
 
 ## Prérequis
 
-- PHP **8.x**
+- PHP **8.4**
 - Composer
 - MySQL **8.x**
 - Node.js et npm (pour la compilation des assets)
