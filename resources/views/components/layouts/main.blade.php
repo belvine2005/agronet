@@ -32,7 +32,7 @@
 
                 <flux:sidebar.item icon="clock" href="#{{-- route('commandes.history') --}}">Historique</flux:sidebar.item>
                 <flux:sidebar.group expandable icon="swatch" heading="Produits" class="grid">
-                    <flux:sidebar.item href="{{ route('products.index') }}">Tous les produits</flux:sidebar.item>
+                    <flux:sidebar.item href="#">Tous les produits</flux:sidebar.item>
                     <flux:sidebar.item href="#">Céréales</flux:sidebar.item>
                     <flux:sidebar.item href="#">Légumes</flux:sidebar.item>
                     <flux:sidebar.item href="#">Fruits</flux:sidebar.item>
@@ -76,10 +76,10 @@
                         <flux:text class="mt-2 text-lime-600 dark:text-lime-500">{{ Auth::user()->roleLabel }}</flux:text>
                     </flux:menu.radio.group>
                     <flux:menu.separator />
-                    <form action="{{ route('auth.logout') }}" method="post" class="w-full">
+                    <form action="{{ route('auth.logout') }}" method="post">
                         @csrf
                         @method('delete')
-                        <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">Déconnexion</flux:menu.item>
+                        <flux:menu.item icon="arrow-right-start-on-rectangle">Déconnexion</flux:menu.item>
                     </form>
                 </flux:menu>
             </flux:dropdown>

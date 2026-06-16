@@ -19,7 +19,7 @@ Route::livewire('/products/create', 'pages::products.create')->name('products.cr
 
 Route::livewire('/ads/create', 'pages::ads.create')->name('ads.create');
 
-Route::get('/products', [ProductController::class, 'index'])->name('products.index');
+//Route::get('/products', [ProductController::class, 'index'])->name('products.index');
 
 Route::post('/products', [ProductController::class, 'store'])->name('products.store');
 
@@ -29,9 +29,7 @@ Route::get('/', function () {
 });
 
 
-Route::get('/test', function(){
-    return view ('test');
-});
+
 
 Route::get('/login', [AuthController::class, 'login']);
 // alias historique : redirige vers la page de connexion (route nommée 'auth.login' = livewire ci-dessus)

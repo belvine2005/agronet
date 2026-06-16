@@ -81,7 +81,7 @@ class AuthController extends Controller
             //la classe Auth permet d'authentifier un user
         if (Auth::attempt($credentials)){       // Laravel crée une session ( avec un id relié aux credentials qui sont sauvegardés sur le serveur)
             $request->session()->regenerate(); // Laravel renomme l'id de la session après la connexion (termes de sécurité)
-            return redirect()->intended(route('products.index')); // si la session est valide, on à l'application
+            return redirect()->intended(route('products.create')); // si la session est valide, on à l'application
         }
 
         return to_route('auth.login')->withErrors([ // si la session est fausse(credentials incoorectes), on est redirigé vers le login

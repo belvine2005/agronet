@@ -9,10 +9,12 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
         @livewireStyles
+        @fluxAppearance
     </head>
-    <body>
+    <body class="min-h-screen bg-white dark:bg-zinc-900 antialiased">
         {{ $slot }}
 
         @livewireScripts
+        @fluxScripts
     </body>
 </html>
