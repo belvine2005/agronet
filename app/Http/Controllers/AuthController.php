@@ -7,6 +7,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Models\Manufacturer;
 use App\Models\Producer;
 use App\Models\User;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -20,22 +21,15 @@ class AuthController extends Controller
         return to_route('auth.login');
     }
 
-    // public function logout(LoginRequest $request)
-    // {
-    //     Auth::logout();                         // déconnexion de l'utilisateur 
-    //     $request->session()->invalidate();      // suppression de la session active
-    //     $request->session()->regenerateToken(); // création d'un nouveau token CSRF qui protège de certaines attaques web 
-    //     return to_route('auth.login');          // redirection vers le Login Form
-
-    // }
-
     public function role(){
-        
+
     }
 
-        public function logout()
+    public function logout(Request $request)
     {
-        Auth::logout();                         // déconnexion de l'utilisateur 
+        Auth::logout();                         // déconnexion de l'utilisateur
+        $request->session()->invalidate();      // suppression de la session active
+        $request->session()->regenerateToken(); // création d'un nouveau token CSRF qui protège de certaines attaques web
         return to_route('auth.login');          // redirection vers le Login Form
 
     }

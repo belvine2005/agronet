@@ -55,10 +55,10 @@
                             <flux:text class="mt-2 text-lime-600 dark:text-lime-500">{{ Auth::user()->roleLabel }}</flux:text>
                         </flux:menu.radio.group>
                         <flux:menu.separator />
-                        <form action="{{ route('auth.logout') }}" method="post">
+                        <form action="{{ route('auth.logout') }}" method="post" class="w-full">
                             @csrf
                             @method('delete')
-                            <flux:menu.item icon="arrow-right-start-on-rectangle">Déconnexion</flux:menu.item>
+                            <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">Déconnexion</flux:menu.item>
                         </form>
                     </flux:menu>
                 @endauth
@@ -76,10 +76,10 @@
                         <flux:text class="mt-2 text-lime-600 dark:text-lime-500">{{ Auth::user()->roleLabel }}</flux:text>
                     </flux:menu.radio.group>
                     <flux:menu.separator />
-                    <form action="{{ route('auth.logout') }}" method="post">
+                    <form action="{{ route('auth.logout') }}" method="post" class="w-full">
                         @csrf
                         @method('delete')
-                        <flux:menu.item icon="arrow-right-start-on-rectangle">Déconnexion</flux:menu.item>
+                        <flux:menu.item as="button" type="submit" icon="arrow-right-start-on-rectangle" class="w-full">Déconnexion</flux:menu.item>
                     </form>
                 </flux:menu>
             </flux:dropdown>
