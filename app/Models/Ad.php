@@ -16,11 +16,12 @@ class Ad extends Model
         'image',
         'adress_latitude',
         'adress_longitude',
-        'adress_indication'
+        'adress_indication',
+        'author_id'
     ];
 
     public function products(){
-        return $this->belongsToMany(Product::class);
+        return $this->belongsToMany(Product::class, 'ad_products')->withTimestamps();
         //une annonce peut concerner plusieurs produits
     }
 

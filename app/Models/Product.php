@@ -41,7 +41,7 @@ class Product extends Model
     }
 
     public function ads(){
-        return $this->belongsToMany(Ad::class);
+        return $this->belongsToMany(Ad::class, 'ad_products')->withTimestamps();
         // un produit peut faire l'objet d'une annonce
     }
 

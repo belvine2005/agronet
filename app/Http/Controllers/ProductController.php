@@ -21,7 +21,7 @@ class ProductController extends Controller
         // dd(Auth::user());
         
 
-        return view('products.index', [
+        return view('products-test.index', [
             'products' => DB::table('products')->paginate(3)
         ]);
     }
