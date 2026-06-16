@@ -1,11 +1,22 @@
 <?php
 
+use Livewire\Attributes\Layout; 
 use Livewire\Component;
+
 
 new class extends Component
 {
     // Le formulaire est soumis en POST classique vers ProductController@store.
+
+        public function render()
+    {
+        return $this->view()
+            ->layout('components.layouts.main');
+    }
 };
+
+
+
 ?>
 
 <div class="max-w-3xl mx-auto py-10">
